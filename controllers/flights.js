@@ -1,33 +1,30 @@
-// const Movie = require('../models/movie');
+const Flight = require("../models/flight");
 
-// module.exports = {
-//     index,
-//     show,
-//     new: newMovie,
-//     create
-// };
 
-// function index(req, res) {
-//     Movie.find({}, function (err, movies) {
-//         res.render('movies/index', { title: 'All Movies', movies });
-//     });
-// }
 
-// function show(req, res) {
-//     Movie.findById(req.params.id, function (err, movie) {
-//         res.render('movies/show', { title: 'Movie Detail', movie });
-//     });
-// }
+function index(req, res) {
+Movie.find({}, function (err, movies) {
+res.render('flights/index', { title: 'All Flights', flights });
+});
+ }
 
-// function newMovie(req, res) {
-//     res.render('movies/new', { title: 'Add Movie' });
-// }
+function show(req, res) {
+Flight.findById(req.params.id, function (err, flight) {
+res.render('flights/show', { title: 'Flight Detail', flight });
+ });
+ }
 
-// function create(req, res) {
-//     // convert nowShowing's checkbox of nothing or "on" to boolean
-//     req.body.nowShowing = !!req.body.nowShowing;
+function newFlight(req, res) {
+res.render('flights/new', { title: 'Add Flight' });
+}
+
+function create(req, res) {
+ // convert nowShowing's checkbox of nothing or "on" to boolean
+ req.body.nowFlying = !!req.body.nowFlying;
 //     // remove whitespace next to commas
-//     req.body.cast = req.body.cast.replace(/\s*,\s*/g, ',');
+req.body.cast = req.body.cast.replace(/\s*,\s*/g, ',');
+
+};
 //     // split if it's not an empty string
 //     if (req.body.cast) req.body.cast = req.body.cast.split(',');
 //     for (let key in req.body) {
@@ -43,3 +40,11 @@
 //         res.redirect('/movies');
 //     });
 // }
+
+module.exports = {
+    index:index,
+    show:show,
+    newFlight:newFlight,
+    create:create,
+
+ };

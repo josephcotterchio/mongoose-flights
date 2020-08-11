@@ -3,11 +3,31 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 const flightSchema = new Schema({
-    airline: String,
-    airport: String,
-    flightNo: Number,
-    departs: Date,
+    airline: {
+        type: String,
+        enum: ['American', 'Southwest', 'United', 'WestJet']
+    },
+    flightNo: {
+        type: Number,
+        required: true,
+        min: 10,
+        max: 9999
+    },
+    departs: {
+        type: Date,
+        default: Date.now() + 365 * 24 * 60 * 60000
+    },
+    airport: {
+        type: String,
+        enum: ['AUS', 'DAL', 'LAX', 'SEA', 'YYZ']
+    },
+    destinations: {
+        type: String,
+    }
+}, {
+    timestamps: true
 });
+
 
 // Compile the schema into a model and export it
 module.exports = mongoose.model('Flight', flightSchema);
