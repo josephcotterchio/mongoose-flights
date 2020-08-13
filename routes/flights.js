@@ -6,7 +6,7 @@ let flightsCtrl = require("../controllers/flights");
 router.get('/', function (req, res, next) {
   //res.send("hello")
   //res.render('index.ejs');
-  res.render('flights/flight.ejs');
+  res.render('flights/flight.ejs', flightsCtrl.create);
 });
 
 
