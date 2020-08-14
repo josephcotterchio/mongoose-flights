@@ -6,20 +6,36 @@
     <title>Document</title>
 </head>
 <body>
-    <form id="new-form" action="/flights" method="POST">
-        <label>Airline:</label>
-        <input type="text" name="title">
-        <label>Airport:</label>
-        <input type="text" name="flightNo">
-        <label>Departs:</label>
-        <select name="departs">
-            <option value="date">G</option>
-        </select>
-        <label>Airport:</label>
-        <input type="text" name="cast">
-        <label>Now Showing:</label>
-        <input type="checkbox" name="nowShowing" checked>
-        <input type="submit" value="Add Movie">
+    <h1>Enter a New Flight</h1>
+    <form action="/flights" method="POST">
+        <label>Airline:
+            <select name="airline">
+                <option value="American">American</option>
+                <option value="Southwest">Southwest</option>
+                <option value="United">United</option>
+                <option value="WestJet">WestJet</option>
+                <option value="Mongoose">Mongoose</option>
+            </select>
+        </label><hr>
+        <label>Flight Number:
+            <input type="text" name="flightNo">
+        </label><hr>
+        <label>Departure
+            <input type="datetime-local" name="departs" value="2020-08-14T18:30" min="2020-08-15T00:00"
+                max="2021-08-15T00:00">
+        </label><hr>
+        <label>Airport:
+            <select name="airport">
+                <option value="AUS">AUS</option>
+                <option value="DAL">DAL</option>
+                <option value="LAX">LAX</option>
+                <option value="SEA">SEA</option>
+                <option value="YYZ">YYZ</option>
+                <option value="MON">MON</option>
+            </select>
+        </label><hr>
+        <input type="submit" value="Add Flight">
     </form>
 </body>
+
 </html>
