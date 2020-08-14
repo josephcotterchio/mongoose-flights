@@ -2,7 +2,7 @@ const Flight = require("../models/flight");
 var Ticket = require("../models/ticket");
 
 function index(req, res) {
-Movie.find({}, function (err, movies) {
+Flight.find({}, function (err, flights) {
 res.render('flights/index', { title: 'All Flights', flights });
 });
  }
@@ -18,7 +18,7 @@ res.render('flights/new', { title: 'Add Flight' });
 }
 
 function create(req, res) {
-    flights.create(req.body);
+    Flight.create(req.body);
     res.redirect("/flights");
 }
 

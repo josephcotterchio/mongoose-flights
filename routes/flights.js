@@ -9,5 +9,4 @@ router.get('/', function (req, res, next) {
   res.render('flights/flight.ejs', flightsCtrl.create);
 });
 
-
 module.exports = router;
