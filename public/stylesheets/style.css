@@ -1,9 +1,13 @@
 body {
   padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
-  background-image: url(/stylesheets/mongoose.jpeg);
 
   /* Center and scale the image nicely */
+
+  background-color: green;
+}
+#front {
+background-image: url(/stylesheets/mongoose.jpeg);
   background-position: center;
   background-repeat: no-repeat;
   position: relative;
