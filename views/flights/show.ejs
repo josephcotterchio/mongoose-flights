@@ -58,8 +58,6 @@
                 <option value="DAL">DAL</option>
                 <option value="LAX">LAX</option>
                 <option value="SEA">SEA</option>
-                <option value="SEA">YYZ</option>
-                <option value="SEA">MON</option>
             </select>
         </label><br>
         <label>Arrival:
@@ -87,7 +85,7 @@
     </table>
 
     <form action="/flights/<%= flight._id %>/ticket" method="POST">
-        <label>Seat:
+        <label>Seat (letter and number):
             <input name="seat" required pattern="[A-F][1-9]\d?">
         </label><br>
         <label>Price:

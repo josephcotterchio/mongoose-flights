@@ -42,7 +42,7 @@ function addDestination(req, res, next) {
   Flight.findById(req.params.id, function (err, flight) {
     flight.destinations.push(req.body);
     flight.save(function (err, flight) {
-      es.redirect(`/flights/${flight._id}`);
+      res.redirect(`/flights/${flight._id}`);
     });
   });
 }
